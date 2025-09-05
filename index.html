@@ -1,135 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Surprise 💖</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
-  }
-
-  .page {
-    text-align: center;
-    padding: 30px 50px;
-    background: rgba(255,255,255,0.9);
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    animation: pop 0.5s ease-out;
-    display: none;
-  }
-
-  .page.active { display: block; }
-
-  @keyframes pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-  }
-
-  button {
-    margin-top: 20px;
-    padding: 10px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background: #ff6ec7;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  button:hover {
-    transform: scale(1.1);
-    background: #ff3ca6;
-  }
-
-  .hearts {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .heart {
-    position: absolute;
-    font-size: 20px;
-    color: red;
-    animation: floatUp linear infinite;
-  }
-
-  @keyframes floatUp {
-    0% { transform: translateY(100vh) scale(1); opacity: 1; }
-    100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
-  }
-
-  h2 { color: #ff0066; }
-  p { font-size: 18px; margin: 10px 0; }
-  img { max-width: 300px; border-radius: 20px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mann's Surprise 💖</title>
+  <style>
+    body {
+      background-color: #fff0f5; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px; /* Mobile-friendly width */
+    }
+    .button {
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin: 15px 0;
+      border-radius: 12px;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #c0265e;
+    }
+    .heart-text, .promises {
+      background-color: #ffe6f0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: #d6336c;
+      display: none;
+      max-height: 80vh; /* scrollable if long */
+      overflow-y: auto;
+      text-align: left;
+    }
+    .promises ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Intro Button -->
+      <div>Hey babe 💖<br>I have something for my dear love!</div>
+    <button id="startBtn" class="button">Open This ❤️</button>
 
-<!-- Page 1 -->
-<div class="page active" id="page1">
-  <div>Hey babe 💖<br>I have something for my dear love!</div>
-  <button onclick="nextPage('page2')">Open Surprise</button>
-</div>
+    <!-- Heart Paragraph -->
+    <div id="heartText" class="heart-text">
+      Your presence in my life is like a gentle sunrise that brightens even my dullest days. Every smile, every word, every little thing you do fills my heart with warmth and peace. I never knew life could feel this full and beautiful until you became a part of it. With you, even the simplest moments feel magical, and every worry feels lighter. Just knowing that you are there, caring and understanding, makes me feel safe, loved, and truly happy. You really mean a lot to me, and I want our bond to stay like this forever, my cutieee.
+      <br><br>
+      <button id="nextBtn1" class="button">Beta aage bhi kuch hai  💕</button>
+    </div>
 
-<!-- Page 2 -->
-<div class="page" id="page2">
-  <div>
-    <img src="13242bcc-3c3e-4b12-b0d8-6b177be0219d.png" alt="Bubbu Duddu Love">
+    <!-- Promises Page -->
+    <div id="promises" class="promises">
+      <strong>My 7 Promises for You:</strong>
+      <ol>
+        <li>I will always make time for you, no matter what.</li>
+        <li>I will support you in every dream and goal.</li>
+        <li>I will be honest and open with you, always.</li>
+        <li>I will listen to you, really listen, every day.</li>
+        <li>I will make you laugh when you feel down.</li>
+        <li>I will care for you in small and big ways.</li>
+        <li>I will love you more with every passing day.</li>
+      </ol>
+      <button id="nextBtn2" class="button">Something Important for You 💖</button>
+    </div>
+
+    <!-- Final Message -->
+    <div id="finalMessage" class="heart-text">
+        <h2>I loveeeeee youuuuuu sooooooo muchhhhhh Mann...... ❤️💖</h2>
+    </div>
   </div>
-  <p>Look at this cutie! 💕</p>
-  <button onclick="nextPage('page3')">Go ahead baby</button>
-</div>
 
-<!-- Page 3: Promises -->
-<div class="page" id="page3">
-  <h2>My 7 Promises to You ❤️</h2>
-  <p>I promise to always be by your side, through every laugh, tear, and everything in between.</p>
-  <p>I promise to listen to you, understand you, and support you even when words fail.</p>
-  <p>I promise to love you for who you are today, tomorrow, and always, without expecting anything in return.</p>
-  <p>I promise to celebrate your successes and hold you close during your struggles.</p>
-  <p>I promise to never stop cherishing the little things you do that make me smile.</p>
-  <p>I promise to trust you, respect you, and keep our bond strong, no matter what life brings.</p>
-  <p>I promise to make you feel loved, safe, and special every single day of our journey together.</p>
-  <button onclick="nextPage('page4')">Something important for you</button>
-</div>
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const heartText = document.getElementById('heartText');
+    const nextBtn1 = document.getElementById('nextBtn1');
+    const promises = document.getElementById('promises');
+    const nextBtn2 = document.getElementById('nextBtn2');
+    const finalMessage = document.getElementById('finalMessage');
 
-<!-- Page 4: Final Love Message -->
-<div class="page" id="page4">
-  <h2>I loveeeeee youuuuuu sooooooo muchhhhhh myyyy Mann ❤️💖</h2>
-</div>
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      heartText.style.display = 'block';
+    });
 
-<div class="hearts" id="hearts"></div>
+    nextBtn1.addEventListener('click', () => {
+      heartText.style.display = 'none';
+      promises.style.display = 'block';
+    });
 
-<script>
-function nextPage(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
-
-  // Add hearts animation on every page
-  for(let i=0; i<30; i++) {
-    let heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (3 + Math.random() * 2) + 's';
-    heart.innerHTML = '❤️';
-    document.getElementById('hearts').appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }
-}
-</script>
-
+    nextBtn2.addEventListener('click', () => {
+      promises.style.display = 'none';
+      finalMessage.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
